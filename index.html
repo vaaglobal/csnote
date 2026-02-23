@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Service Mastery — Training Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f0e8;
+    --cream: #ede8dc;
+    --rust: #c94f2a;
+    --rust-light: #e8816a;
+    --teal: #1a6b6b;
+    --teal-light: #2a9090;
+    --gold: #c9972a;
+    --gold-light: #e8b84a;
+    --muted: #6b6560;
+    --white: #ffffff;
+    --card-shadow: 0 4px 24px rgba(15,14,12,0.10);
+    --section-border: 2px solid var(--ink);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--ink);
+    color: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    border-bottom: 3px solid var(--rust);
+  }
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--paper);
+  }
+  nav .nav-links {
+    display: flex;
+    gap: 0.2rem;
+    list-style: none;
+    overflow-x: auto;
+  }
+  nav .nav-links a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: background 0.2s;
+    text-transform: uppercase;
+  }
+  nav .nav-links a:hover { background: var(--rust); }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: var(--rust);
+    opacity: 0.12;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -40px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.15;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--rust-light);
+  }
+  .hero p {
+    margin: 1.5rem auto 0;
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #b8b4aa;
+    position: relative;
+  }
+  .hero-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    position: relative;
+  }
+  .badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--paper);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+  }
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: var(--section-border);
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .section-sub {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 0.2rem;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border: 1.5px solid #ddd8ce;
+    border-radius: 8px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+  }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .card h3 .icon {
+    width: 30px; height: 30px;
+    background: var(--rust);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .card h3 .icon.teal { background: var(--teal); }
+  .card h3 .icon.gold { background: var(--gold); }
+
+  /* STEP LIST */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1.2rem;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px; height: 28px;
+    background: var(--rust);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+  .steps li strong { display: block; font-weight: 600; }
+  .steps li span { font-size: 0.93rem; color: var(--muted); }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media(max-width:640px){ .grid-2 { grid-template-columns: 1fr; } }
+
+  /* TIP BOX */
+  .tip {
+    background: #f0fafa;
+    border-left: 4px solid var(--teal);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+    font-size: 0.93rem;
+  }
+  .tip strong { color: var(--teal); }
+
+  .warning {
+    background: #fff8f5;
+    border-left: 4px solid var(--rust);
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+    font-size: 0.93rem;
+  }
+  .warning strong { color: var(--rust); }
+
+  /* SCENARIO */
+  .scenario {
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .scenario-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .scenario-header .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    background: var(--rust);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+  }
+  .scenario-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+  }
+  .scenario-body { padding: 1.5rem; }
+  .scenario-body p { margin-bottom: 0.8rem; font-size: 0.95rem; }
+  .dialogue {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+  }
+  .dialogue .customer, .dialogue .agent {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    align-items: flex-start;
+  }
+  .dialogue .speaker {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .dialogue .customer .speaker { background: #fde8e0; color: var(--rust); }
+  .dialogue .agent .speaker { background: #e0f0f0; color: var(--teal); }
+  .dialogue p { font-size: 0.9rem; margin: 0; }
+
+  .outcome {
+    background: #f0fff4;
+    border: 1.5px solid #aad4b0;
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+    font-size: 0.93rem;
+  }
+  .outcome strong { color: #2a7a3a; }
+
+  /* FORMULA */
+  .formula-box {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-family: 'DM Mono', monospace;
+    text-align: center;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+  .formula-box .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .formula-box .formula {
+    color: var(--gold-light);
+    font-size: 1.1rem;
+  }
+
+  .example-box {
+    background: #fffbf0;
+    border: 1.5px solid var(--gold-light);
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+  }
+  .example-box .ex-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  /* METRIC CARDS */
+  .metric-hero {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .metric-hero::after {
+    content: attr(data-abbr);
+    position: absolute;
+    right: 1.5rem; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    opacity: 0.08;
+    line-height: 1;
+  }
+  .metric-hero h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .metric-hero .abbr-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--rust);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+  .metric-hero p { font-size: 0.92rem; color: #bbb; }
+
+  /* RANGE VIZ */
+  .range-viz {
+    display: flex;
+    gap: 2px;
+    margin: 1rem 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .range-viz .seg {
+    height: 10px;
+    flex: 1;
+    border-radius: 2px;
+  }
+  .range-viz .seg.bad { background: #e05a4a; }
+  .range-viz .seg.neutral { background: var(--gold); }
+  .range-viz .seg.good { background: #3ab06a; }
+  .range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* QUIZ */
+  .quiz-section {
+    background: var(--cream);
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .quiz-header {
+    background: var(--teal);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .quiz-header .quiz-icon { font-size: 1.3rem; }
+  .quiz-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+  }
+  .quiz-header .quiz-count {
+    margin-left: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    background: rgba(255,255,255,0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+  }
+
+  .quiz-body { padding: 1.5rem; }
+  .quiz-item {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px dashed #ccc;
+  }
+  .quiz-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .quiz-q {
+    font-weight: 600;
+    font-size: 0.97rem;
+    margin-bottom: 1rem;
+  }
+  .quiz-q .qnum {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    background: var(--teal);
+    color: white;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+  }
+  .quiz-options {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .quiz-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    background: white;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    transition: all 0.18s;
+    font-size: 0.92rem;
+    user-select: none;
+  }
+  .quiz-option:hover { border-color: var(--teal); background: #f0fafa; }
+  .quiz-option input[type="radio"] { display: none; }
+  .quiz-option .opt-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    background: var(--cream);
+    border: 1px solid #ccc;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 4px;
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+  .quiz-option.selected { border-color: var(--teal); background: #e8f5f5; }
+  .quiz-option.selected .opt-label { background: var(--teal); color: white; border-color: var(--teal); }
+  .quiz-option.correct { border-color: #3ab06a !important; background: #efffee !important; }
+  .quiz-option.correct .opt-label { background: #3ab06a !important; color: white !important; border-color: #3ab06a !important; }
+  .quiz-option.wrong { border-color: var(--rust) !important; background: #fff0ee !important; }
+  .quiz-option.wrong .opt-label { background: var(--rust) !important; color: white !important; border-color: var(--rust) !important; }
+  .quiz-option.disabled { cursor: default; pointer-events: none; }
+
+  .quiz-feedback {
+    display: none;
+    margin-top: 0.8rem;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct-fb { background: #efffee; border-left: 3px solid #3ab06a; }
+  .quiz-feedback.wrong-fb { background: #fff0ee; border-left: 3px solid var(--rust); }
+  .check-btn {
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    transition: background 0.2s;
+  }
+  .check-btn:hover { background: var(--teal-light); }
+  .check-btn:disabled { background: #aaa; cursor: default; }
+
+  .score-display {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    margin-top: 1.2rem;
+    display: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+  }
+  .score-display.show { display: block; }
+  .score-display .score-val {
+    font-size: 2rem;
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .submit-quiz-btn {
+    background: var(--rust);
+    color: white;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.2s;
+    display: block;
+    width: 100%;
+  }
+  .submit-quiz-btn:hover { background: var(--rust-light); }
+
+  /* STRESS / GROWTH */
+  .technique-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .technique-card {
+    background: white;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .technique-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+  .technique-card .tc-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .technique-card h4 { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .technique-card p { font-size: 0.82rem; color: var(--muted); }
+
+  .career-timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .career-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--ink);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 12px; height: 12px;
+    background: var(--rust);
+    border-radius: 50%;
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--rust);
+  }
+  .timeline-item h4 { font-weight: 600; }
+  .timeline-item p { font-size: 0.87rem; color: var(--muted); }
+
+  .pdp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+  .pdp-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .pdp-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #e0dbd0;
+  }
+  .pdp-table tr:nth-child(even) td { background: var(--cream); }
+  .pdp-table tr:hover td { background: #f0f9f9; }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 2px dashed #ccc;
+    margin: 3rem auto;
+    max-width: 900px;
+  }
+
+  /* FEEDBACK COLLECT */
+  .channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .channel-card {
+    background: white;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+  }
+  .channel-card .ch-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .channel-card h4 { font-weight: 600; font-size: 0.92rem; margin-bottom: 0.3rem; }
+  .channel-card p { font-size: 0.8rem; color: var(--muted); }
+  .channel-card .use-when { font-size: 0.78rem; color: var(--teal); margin-top: 0.4rem; font-weight: 500; }
+
+  footer {
+    background: var(--ink);
+    color: #888;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+    margin-top: 4rem;
+  }
+
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--paper);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE NAV DRAWER */
+  @media(max-width:640px) {
+    .hamburger { display: flex; }
+
+    nav { padding: 0 1rem; }
+
+    nav .nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 56px;
+      left: 0; right: 0;
+      background: var(--ink);
+      border-top: 2px solid var(--rust);
+      padding: 1rem;
+      gap: 0.3rem;
+      z-index: 150;
+    }
+    nav .nav-links.open { display: flex; }
+    nav .nav-links a {
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* HERO */
+    .hero { padding: 3rem 1.2rem 2.5rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 0.95rem; }
+    .hero-badges { gap: 0.5rem; }
+    .badge { font-size: 0.75rem; padding: 0.3rem 0.75rem; }
+
+    /* SECTIONS */
+    .section { padding: 0 1rem; margin: 2.5rem auto; }
+    .section-header { flex-direction: column; gap: 0.5rem; }
+    .section-header h2 { font-size: 1.5rem; }
+
+    /* CARDS */
+    .card { padding: 1.2rem; }
+
+    /* GRID */
+    .grid-2 { grid-template-columns: 1fr; }
+
+    /* STEPS */
+    .steps li { padding-left: 2.5rem; }
+
+    /* SCENARIO */
+    .scenario-header { flex-wrap: wrap; gap: 0.5rem; padding: 0.8rem 1rem; }
+    .scenario-body { padding: 1rem; }
+    .dialogue { padding: 0.8rem; }
+    .dialogue .customer,
+    .dialogue .agent { flex-wrap: wrap; gap: 0.4rem; }
+
+    /* METRIC HERO */
+    .metric-hero { padding: 1.2rem; }
+    .metric-hero::after { font-size: 3.5rem; opacity: 0.06; }
+
+    /* TECHNIQUE GRID */
+    .technique-grid { grid-template-columns: 1fr 1fr; }
+
+    /* TABLE — scroll on mobile */
+    .pdp-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pdp-table th, .pdp-table td { min-width: 120px; white-space: normal; }
+
+    /* QUIZ */
+    .quiz-body { padding: 1rem; }
+    .quiz-header { padding: 0.8rem 1rem; }
+    .quiz-option { padding: 0.6rem 0.8rem; font-size: 0.88rem; }
+    .submit-quiz-btn { padding: 0.7rem 1rem; }
+
+    /* CHANNELS GRID */
+    .channels-grid { grid-template-columns: 1fr; }
+
+    /* FORMULA */
+    .formula-box { font-size: 0.9rem; padding: 1rem; }
+    .formula-box .formula { font-size: 0.95rem; word-break: break-word; }
+
+    /* FOOTER */
+    footer { padding: 1.5rem 1rem; }
+  }
+
+  @media(max-width:380px) {
+    .technique-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+
+  .tag-pill {
+    display: inline-block;
+    background: var(--cream);
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .tag-pill.rust { background: #fde8e0; border-color: var(--rust); color: var(--rust); }
+  .tag-pill.teal { background: #e0f0f0; border-color: var(--teal); color: var(--teal); }
+  .tag-pill.gold { background: #fef3d8; border-color: var(--gold); color: var(--gold); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">CS Mastery</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#complaints" onclick="closeNav()">Complaints</a></li>
+    <li><a href="#scenarios" onclick="closeNav()">Scenarios</a></li>
+    <li><a href="#metrics" onclick="closeNav()">Metrics</a></li>
+    <li><a href="#feedback" onclick="closeNav()">Feedback</a></li>
+    <li><a href="#growth" onclick="closeNav()">Growth</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="hero">
+  <h1>Customer Service<br><em>Mastery</em> Training Guide</h1>
+  <p>A practical, interactive guide to handling complaints, measuring satisfaction, collecting feedback, and building a thriving career in customer service.</p>
+  <div class="hero-badges">
+    <span class="badge">🎯 Interactive Quizzes</span>
+    <span class="badge">📋 Real Scenarios</span>
+    <span class="badge">📊 Metric Calculators</span>
+    <span class="badge">🚀 Career Roadmap</span>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 1 -->
+<div class="section" id="complaints">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <div>
+      <h2>Managing Customer Complaints</h2>
+      <p class="section-sub">De-escalation techniques, problem-solving frameworks & turning challenges into opportunities</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">🔥</span> The HEAT De-escalation Framework</h3>
+    <p style="margin-bottom:1rem;">Use this 4-step framework whenever a customer is upset, angry, or frustrated. It works because it addresses the emotional state before the factual problem.</p>
+    <ol class="steps">
+      <li>
+        <strong>Hear them out fully</strong>
+        <span>Don't interrupt. Let the customer finish venting. Active listening signals respect. Nod (on calls, use verbal affirmations like "I see" or "Go on").</span>
+      </li>
+      <li>
+        <strong>Empathize genuinely</strong>
+        <span>Use statements like: "I completely understand why that's frustrating," or "I'd feel the same way in your position." Never fake it — customers can tell.</span>
+      </li>
+      <li>
+        <strong>Apologize and own it</strong>
+        <span>Even if it's not your fault personally, represent the company. "I'm truly sorry this happened to you" is not admitting legal fault — it's human decency.</span>
+      </li>
+      <li>
+        <strong>Take action immediately</strong>
+        <span>Don't ask "what would you like me to do?" — propose a concrete solution. Then follow through. Speed of resolution is the #1 driver of satisfaction recovery.</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3><span class="icon teal">❌</span> Phrases to AVOID</h3>
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">❌ "That's not my department"</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">❌ "Calm down"</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">❌ "You should have..."</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">❌ "There's nothing I can do"</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">❌ "That's our policy" (said coldly)</li>
+        <li style="padding:0.4rem 0;font-size:0.9rem;">❌ "Actually, you're wrong"</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="icon gold">✅</span> Power Phrases that WORK</h3>
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">✅ "Let me personally look into this for you"</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">✅ "I completely understand your frustration"</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">✅ "What I can do right now is..."</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">✅ "You were right to contact us about this"</li>
+        <li style="padding:0.4rem 0;border-bottom:1px dashed #eee;font-size:0.9rem;">✅ "Here's exactly what will happen next..."</li>
+        <li style="padding:0.4rem 0;font-size:0.9rem;">✅ "I appreciate your patience while I fix this"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">🔄</span> Turning Challenges into Opportunities: The Recovery Paradox</h3>
+    <p style="margin-bottom:0.8rem;">Research shows that customers whose complaints are resolved excellently often become <strong>more loyal</strong> than customers who never had a problem. This is the "Service Recovery Paradox."</p>
+    <div class="grid-2">
+      <div>
+        <div class="tip"><strong>💡 Opportunity Mindset:</strong> Every complaint is a free quality audit. Someone cared enough to tell you what's broken instead of just leaving.</div>
+        <p style="font-size:0.9rem;margin-top:0.8rem;">When you resolve a complaint, you're not just fixing one customer's problem — you're uncovering a systemic issue that may affect thousands of silent customers.</p>
+      </div>
+      <div>
+        <div class="warning"><strong>⚠️ The Silent Majority:</strong> For every 1 customer who complains, an average of 26 stay silent and just leave. The complainer is your informant — treat them like gold.</div>
+        <p style="font-size:0.9rem;margin-top:0.8rem;">Document every complaint, categorize by root cause, and report patterns to management with suggested fixes. This is what transforms you from a rep into a strategist.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ 1 -->
+  <div class="quiz-section" id="quiz1">
+    <div class="quiz-header">
+      <span class="quiz-icon">🧠</span>
+      <h3>Quiz — De-escalation & Problem-Solving</h3>
+      <span class="quiz-count">3 Questions</span>
+    </div>
+    <div class="quiz-body">
+      <!-- Q1 -->
+      <div class="quiz-item" data-correct="b">
+        <div class="quiz-q"><span class="qnum">Q1</span> A customer calls in furious that their delivery is 5 days late. What should you do FIRST?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',0)"><input type="radio" name="q1_1"><span class="opt-label">A</span><span>Immediately explain why the delay happened</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',0)"><input type="radio" name="q1_1"><span class="opt-label">B</span><span>Let them vent fully without interrupting, then empathize</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',0)"><input type="radio" name="q1_1"><span class="opt-label">C</span><span>Tell them to calm down so you can help them</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',0)"><input type="radio" name="q1_1"><span class="opt-label">D</span><span>Transfer them to the shipping department</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz1_0_fb_correct">✅ <strong>Correct!</strong> The "H" in HEAT is "Hear them out." Before solving anything, the customer needs to feel heard. Interrupting or jumping to explanations will escalate the situation further.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz1_0_fb_wrong">❌ <strong>Not quite.</strong> The correct answer is B. The first step of HEAT is to <strong>Hear them out fully</strong>. Customers can't absorb information until their emotional state is acknowledged.</div>
+      </div>
+      <!-- Q2 -->
+      <div class="quiz-item" data-correct="c">
+        <div class="quiz-q"><span class="qnum">Q2</span> What is the "Service Recovery Paradox"?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',1)"><input type="radio" name="q1_2"><span class="opt-label">A</span><span>Customers who complain are always less loyal than those who don't</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',1)"><input type="radio" name="q1_2"><span class="opt-label">B</span><span>Solving a complaint always costs more than losing the customer</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',1)"><input type="radio" name="q1_2"><span class="opt-label">C</span><span>Customers whose complaints are resolved excellently can become MORE loyal than those with no issues</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',1)"><input type="radio" name="q1_2"><span class="opt-label">D</span><span>Companies should avoid recovery strategies to protect brand image</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz1_1_fb_correct">✅ <strong>Correct!</strong> Excellent complaint resolution can create stronger emotional bonds than customers who never experienced a problem. This is why every complaint is actually an opportunity.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz1_1_fb_wrong">❌ <strong>Incorrect.</strong> The correct answer is C. The Service Recovery Paradox shows that outstanding complaint resolution can turn frustrated customers into your strongest advocates.</div>
+      </div>
+      <!-- Q3 -->
+      <div class="quiz-item" data-correct="d">
+        <div class="quiz-q"><span class="qnum">Q3</span> A customer complains about a confusing checkout process on your website. Beyond solving their immediate issue, what's the MOST valuable action for the company?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',2)"><input type="radio" name="q1_3"><span class="opt-label">A</span><span>Thank the customer and close the ticket</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',2)"><input type="radio" name="q1_3"><span class="opt-label">B</span><span>Tell them the website is being updated soon</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',2)"><input type="radio" name="q1_3"><span class="opt-label">C</span><span>Offer a discount as compensation</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz1',2)"><input type="radio" name="q1_3"><span class="opt-label">D</span><span>Document the specific issue and report it to the product/UX team with details</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz1_2_fb_correct">✅ <strong>Correct!</strong> Remember — for every 1 person who complains, ~26 silent users had the same problem and left. Documenting and escalating feedback turns a support ticket into product improvement that helps thousands.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz1_2_fb_wrong">❌ <strong>Not quite.</strong> The answer is D. While solving the immediate issue matters, the strategic value is in <strong>reporting the pattern</strong> so the root cause gets fixed for all future customers.</div>
+      </div>
+      <button class="submit-quiz-btn" onclick="submitQuiz('quiz1',3)">Submit Quiz & See Score</button>
+      <div class="score-display" id="quiz1_score"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 2: SCENARIOS -->
+<hr class="divider">
+<div class="section" id="scenarios">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <div>
+      <h2>Case Studies: Real Complaint Scenarios</h2>
+      <p class="section-sub">Two detailed, realistic scenarios from a consumer electronics company — TechNova</p>
+    </div>
+  </div>
+
+  <!-- Scenario 1 -->
+  <div class="scenario">
+    <div class="scenario-header">
+      <span class="tag">SCENARIO 01</span>
+      <h3>TechNova — The Defective Laptop (E-Commerce / Tech Support)</h3>
+    </div>
+    <div class="scenario-body">
+      <p><strong>Context:</strong> Sarah bought a TechNova laptop (₦450,000) 3 weeks ago for her freelance design work. The screen starts flickering and the laptop shuts down randomly. She has a client deadline tomorrow. She calls TechNova support — furious.</p>
+
+      <div class="dialogue">
+        <div class="customer">
+          <span class="speaker">SARAH</span>
+          <p>"I cannot BELIEVE this. I just paid almost half a million naira for this laptop and after 3 weeks it's broken! The screen flickers constantly and it shuts off whenever it wants. My deadline is TOMORROW and I can't work. This is completely unacceptable. I want my money back NOW."</p>
+        </div>
+        <div class="agent">
+          <span class="speaker">AGENT</span>
+          <p>"Sarah, I hear you, and I am so sorry. Losing your working tool the night before a client deadline is genuinely awful, and I completely understand the frustration and stress you're under right now. You absolutely did not pay that amount of money to be dealing with this."</p>
+        </div>
+        <div class="agent">
+          <span class="speaker">AGENT</span>
+          <p>"Here's what I want to do for you right now: First, I'm escalating this to our Priority Hardware team — they can do a remote diagnostic in 15 minutes. If we can't fix it remotely, I will personally arrange a same-day replacement laptop delivered to you by 6pm today. Your deadline will not be impacted. Are you okay with us starting the diagnostic right now?"</p>
+        </div>
+        <div class="customer">
+          <span class="speaker">SARAH</span>
+          <p>"...Okay. Yes. Thank you. I just need to get this sorted."</p>
+        </div>
+        <div class="agent">
+          <span class="speaker">AGENT</span>
+          <p>"Absolutely. I'm staying on this call with you through the diagnostic, and I'll personally follow up once the replacement is confirmed dispatched. You have my direct extension. Let's fix this together."</p>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <span class="tag-pill rust">HEAR</span>
+        <span class="tag-pill teal">EMPATHIZE</span>
+        <span class="tag-pill gold">APOLOGIZE</span>
+        <span class="tag-pill rust">TAKE ACTION</span>
+      </div>
+
+      <p style="margin-top:1rem;font-size:0.9rem;"><strong>What the agent did well:</strong> Didn't interrupt. Validated the financial investment. Proposed a concrete, time-bound solution immediately. Took personal ownership ("I will personally"). Offered two resolution paths (remote fix or replacement). Gave the customer a sense of control.</p>
+
+      <p style="font-size:0.9rem;"><strong>Turning challenge into opportunity:</strong> The agent flags this to the hardware team as a potential batch defect with the 3-week-old model. TechNova discovers 47 other units have the same issue and proactively reaches out to all customers before they experience the problem — earning massive goodwill.</p>
+
+      <div class="outcome">
+        <strong>✅ Outcome:</strong> Sarah receives a replacement by 5:30pm. She meets her deadline. She later posts a positive review specifically about the customer service response. She becomes a repeat customer and refers two colleagues.
+      </div>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="scenario">
+    <div class="scenario-header">
+      <span class="tag">SCENARIO 02</span>
+      <h3>TechNova — The Wrong Item Delivered (Fulfillment / Logistics)</h3>
+    </div>
+    <div class="scenario-body">
+      <p><strong>Context:</strong> James ordered TechNova wireless earbuds as a birthday gift for his son. He received a completely different product — a wired keyboard. His son's birthday party is in 2 hours. He contacts TechNova via live chat, extremely upset.</p>
+
+      <div class="dialogue">
+        <div class="customer">
+          <span class="speaker">JAMES</span>
+          <p>"Are you SERIOUS right now? I ordered wireless earbuds for my son's birthday and you sent me a keyboard. His birthday party is in 2 HOURS. This is ruined. Your company is a joke."</p>
+        </div>
+        <div class="agent">
+          <span class="speaker">AGENT</span>
+          <p>"James, this is genuinely awful timing and I'm so sorry this happened. A birthday is a special occasion and a wrong delivery is completely our mistake — there's no excuse for this. I want to fix this as fast as humanly possible."</p>
+        </div>
+        <div class="agent">
+          <span class="speaker">AGENT</span>
+          <p>"I'm checking our express same-day network right now... I can see we have the earbuds in a partner store 4km from you. I can arrange for them to be dispatched to you within 45 minutes via our emergency delivery service at zero cost. I'm also adding a ₦5,000 gift voucher to your account for the stress this caused. Can I confirm your delivery address?"</p>
+        </div>
+        <div class="customer">
+          <span class="speaker">JAMES</span>
+          <p>"45 minutes? Yes, that... actually works. Okay. Yes. Please do that."</p>
+        </div>
+        <div class="agent">
+          <span class="speaker">AGENT</span>
+          <p>"Done. I've sent you a tracking link via SMS. You'll get a live update every 10 minutes. I'm so sorry again — your son is going to love the gift. Happy birthday to him."</p>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <span class="tag-pill rust">EMPATHY FIRST</span>
+        <span class="tag-pill teal">IMMEDIATE ACTION</span>
+        <span class="tag-pill gold">GOODWILL GESTURE</span>
+        <span class="tag-pill rust">PROACTIVE COMMS</span>
+      </div>
+
+      <p style="margin-top:1rem;font-size:0.9rem;"><strong>What the agent did well:</strong> Checked available resources in real-time rather than giving a generic "we'll investigate" response. Proposed a specific, measurable solution with a time commitment. Added a goodwill gesture without being asked. Maintained warmth throughout. Ended on a personal, human note.</p>
+
+      <p style="font-size:0.9rem;"><strong>Turning challenge into opportunity:</strong> The wrong-item issue is flagged to the warehouse team. Analysis reveals a mislabeling error at the packing stage affecting 12% of orders in that batch. TechNova fixes the labeling process — reducing future fulfilment errors by 90%.</p>
+
+      <div class="outcome">
+        <strong>✅ Outcome:</strong> James receives the earbuds with 25 minutes to spare. He screenshots the chat conversation and shares it on Twitter calling it "the best customer service I've ever received." TechNova gains 200+ new followers from the viral post.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 3: METRICS -->
+<hr class="divider">
+<div class="section" id="metrics">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <div>
+      <h2>Customer Service Metrics</h2>
+      <p class="section-sub">CSAT, NPS & CES — how to calculate, interpret, and act on them</p>
+    </div>
+  </div>
+
+  <!-- CSAT -->
+  <div class="metric-hero" data-abbr="CSAT">
+    <span class="abbr-tag">CSAT</span>
+    <h3>Customer Satisfaction Score</h3>
+    <p>Measures how satisfied customers are with a specific interaction or transaction. Quick, immediate, and actionable.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">📐</span> How to Calculate CSAT</h3>
+    <p>Ask customers after an interaction: <em>"How satisfied were you with the service you received?"</em> on a 1–5 scale (or 1–10). CSAT counts only the "satisfied" responses (4s and 5s on a 5-point scale).</p>
+    <div class="formula-box">
+      <div class="label">CSAT Formula</div>
+      <div class="formula">CSAT (%) = (Number of Satisfied Customers ÷ Total Responses) × 100</div>
+    </div>
+
+    <div class="example-box">
+      <div class="ex-label">📊 Worked Example — TechNova Support Team</div>
+      <p style="font-size:0.9rem;">In January, TechNova sent CSAT surveys after 500 support interactions. 380 customers gave a score of 4 or 5 (satisfied).</p>
+      <br>
+      <p style="font-family:'DM Mono',monospace;font-size:0.9rem;background:var(--cream);padding:0.8rem;border-radius:6px;">CSAT = (380 ÷ 500) × 100 = <strong>76%</strong></p>
+      <br>
+      <p style="font-size:0.88rem;color:var(--muted);">Interpretation: A CSAT above 75% is considered good. TechNova is performing at the lower edge of "good." Target should be 85%+. The 24% of dissatisfied customers should be analyzed for patterns (long wait times? specific agents? specific issues?).</p>
+    </div>
+
+    <div class="tip"><strong>Industry benchmarks:</strong> Retail: ~77% | Software: ~74% | Financial Services: ~73% | Telecom: ~62%. Always benchmark against your own industry, not just the global average.</div>
+  </div>
+
+  <!-- CSAT Quiz -->
+  <div class="quiz-section" id="quiz_csat">
+    <div class="quiz-header" style="background:var(--rust);">
+      <span class="quiz-icon">🧮</span>
+      <h3>Quiz — CSAT</h3>
+      <span class="quiz-count">2 Questions</span>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-item" data-correct="c">
+        <div class="quiz-q"><span class="qnum">Q1</span> Your team received 200 CSAT responses. 140 customers rated their experience 4 or 5 out of 5. What is your CSAT?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',0)"><input type="radio" name="qcsat_1"><span class="opt-label">A</span><span>45%</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',0)"><input type="radio" name="qcsat_1"><span class="opt-label">B</span><span>80%</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',0)"><input type="radio" name="qcsat_1"><span class="opt-label">C</span><span>70%</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',0)"><input type="radio" name="qcsat_1"><span class="opt-label">D</span><span>65%</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_csat_0_fb_correct">✅ <strong>Correct!</strong> (140 ÷ 200) × 100 = 70%. This is below the typical "good" threshold of 75%, indicating improvement is needed.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_csat_0_fb_wrong">❌ <strong>Try again.</strong> Answer: C — 70%. (140 ÷ 200) × 100 = 70%. Only satisfied responses (4 or 5) count in the numerator.</div>
+      </div>
+      <div class="quiz-item" data-correct="b">
+        <div class="quiz-q"><span class="qnum">Q2</span> CSAT is best used to measure which of the following?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',1)"><input type="radio" name="qcsat_2"><span class="opt-label">A</span><span>Long-term customer loyalty and likelihood to recommend</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',1)"><input type="radio" name="qcsat_2"><span class="opt-label">B</span><span>Satisfaction with a specific, recent interaction or transaction</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',1)"><input type="radio" name="qcsat_2"><span class="opt-label">C</span><span>The effort a customer had to put in to resolve their issue</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_csat',1)"><input type="radio" name="qcsat_2"><span class="opt-label">D</span><span>Employee performance across all channels</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_csat_1_fb_correct">✅ <strong>Correct!</strong> CSAT is transactional and immediate. It measures how a specific interaction felt — perfect for post-support feedback, post-purchase surveys, etc.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_csat_1_fb_wrong">❌ <strong>Incorrect.</strong> The answer is B. CSAT measures satisfaction with a specific interaction. Long-term loyalty is NPS, and effort measurement is CES.</div>
+      </div>
+      <button class="submit-quiz-btn" onclick="submitQuiz('quiz_csat',2)">Submit Quiz & See Score</button>
+      <div class="score-display" id="quiz_csat_score"></div>
+    </div>
+  </div>
+
+  <!-- NPS -->
+  <div class="metric-hero" data-abbr="NPS" style="background:#1a3a6b;margin-top:2rem;">
+    <span class="abbr-tag" style="background:var(--teal);">NPS</span>
+    <h3>Net Promoter Score</h3>
+    <p>Measures customer loyalty and likelihood to recommend your brand. A leading indicator of long-term growth.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon teal">📐</span> How to Calculate NPS</h3>
+    <p>Ask one question: <em>"On a scale of 0–10, how likely are you to recommend us to a friend or colleague?"</em></p>
+    <ul style="list-style:none;padding:0;margin:1rem 0;">
+      <li style="padding:0.5rem;background:#efffee;border-radius:4px;margin-bottom:0.4rem;font-size:0.9rem;border-left:3px solid #3ab06a;"><strong>Promoters (9–10):</strong> Loyal enthusiasts who will refer others</li>
+      <li style="padding:0.5rem;background:#fffbf0;border-radius:4px;margin-bottom:0.4rem;font-size:0.9rem;border-left:3px solid var(--gold);"><strong>Passives (7–8):</strong> Satisfied but unenthusiastic. Vulnerable to competitors</li>
+      <li style="padding:0.5rem;background:#fff0ee;border-radius:4px;margin-bottom:0.4rem;font-size:0.9rem;border-left:3px solid var(--rust);"><strong>Detractors (0–6):</strong> Unhappy customers who may spread negative word-of-mouth</li>
+    </ul>
+
+    <div class="range-viz">
+      <div class="seg bad" style="flex:7"></div>
+      <div class="seg neutral" style="flex:2"></div>
+      <div class="seg good" style="flex:2"></div>
+    </div>
+    <div class="range-labels"><span>0 — Detractors</span><span>7–8 Passives</span><span>9–10 Promoters</span></div>
+
+    <div class="formula-box" style="margin-top:1rem;">
+      <div class="label">NPS Formula</div>
+      <div class="formula">NPS = % Promoters − % Detractors</div>
+      <div style="font-size:0.75rem;color:#aaa;margin-top:0.4rem;">Note: Passives are excluded from the calculation (they count in total respondents, not the score)</div>
+    </div>
+
+    <div class="example-box">
+      <div class="ex-label">📊 Worked Example — TechNova Annual Survey</div>
+      <p style="font-size:0.9rem;">TechNova surveys 1,000 customers. Results:</p>
+      <ul style="font-size:0.9rem;margin:0.5rem 0 0.5rem 1.2rem;">
+        <li>Promoters (9–10): 420 customers → <strong>42%</strong></li>
+        <li>Passives (7–8): 280 customers → 28%</li>
+        <li>Detractors (0–6): 300 customers → <strong>30%</strong></li>
+      </ul>
+      <p style="font-family:'DM Mono',monospace;font-size:0.9rem;background:var(--cream);padding:0.8rem;border-radius:6px;margin-top:0.5rem;">NPS = 42% − 30% = <strong>+12</strong></p>
+      <p style="font-size:0.88rem;color:var(--muted);margin-top:0.5rem;">Interpretation: An NPS of +12 is mediocre. World-class companies (Apple, Amazon) score 50+. TechNova needs to focus on converting Detractors and moving Passives to Promoters. Follow up with Detractors immediately with personal outreach.</p>
+    </div>
+    <div class="tip"><strong>💡 Pro tip:</strong> Always add a follow-up open question: "What's the main reason for your score?" This qualitative data is where the real insights live.</div>
+  </div>
+
+  <!-- NPS Quiz -->
+  <div class="quiz-section" id="quiz_nps">
+    <div class="quiz-header" style="background:#1a3a6b;">
+      <span class="quiz-icon">🧮</span>
+      <h3>Quiz — NPS</h3>
+      <span class="quiz-count">2 Questions</span>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-item" data-correct="a">
+        <div class="quiz-q"><span class="qnum">Q1</span> You survey 400 customers. 160 are Promoters, 100 are Passives, 140 are Detractors. What is your NPS?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',0)"><input type="radio" name="qnps_1"><span class="opt-label">A</span><span>+5</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',0)"><input type="radio" name="qnps_1"><span class="opt-label">B</span><span>+15</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',0)"><input type="radio" name="qnps_1"><span class="opt-label">C</span><span>-5</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',0)"><input type="radio" name="qnps_1"><span class="opt-label">D</span><span>+40</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_nps_0_fb_correct">✅ <strong>Correct!</strong> Promoters: 160/400 = 40%. Detractors: 140/400 = 35%. NPS = 40% − 35% = +5. Note: Passives (100) are excluded from the score calculation.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_nps_0_fb_wrong">❌ <strong>Incorrect.</strong> Answer is A: +5. Promoters% = 160/400 = 40%. Detractors% = 140/400 = 35%. NPS = 40−35 = +5. Don't include Passives in the formula!</div>
+      </div>
+      <div class="quiz-item" data-correct="d">
+        <div class="quiz-q"><span class="qnum">Q2</span> A customer rates you 7 out of 10 on the NPS question. How should you classify them?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',1)"><input type="radio" name="qnps_2"><span class="opt-label">A</span><span>Promoter — they gave a good score</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',1)"><input type="radio" name="qnps_2"><span class="opt-label">B</span><span>Detractor — any score below 10 is negative</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',1)"><input type="radio" name="qnps_2"><span class="opt-label">C</span><span>Promoter — 7 is above average</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_nps',1)"><input type="radio" name="qnps_2"><span class="opt-label">D</span><span>Passive — satisfied but not enthusiastic enough to actively recommend</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_nps_1_fb_correct">✅ <strong>Correct!</strong> Scores of 7 and 8 are Passives. They're content but won't actively promote you — and they're vulnerable to switching if a competitor offers something better. The goal is to move them to 9–10.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_nps_1_fb_wrong">❌ <strong>Incorrect.</strong> The answer is D — Passive. In NPS, only 9–10 are Promoters, 7–8 are Passives, and 0–6 are Detractors. A 7 is NOT a good score in NPS terms.</div>
+      </div>
+      <button class="submit-quiz-btn" onclick="submitQuiz('quiz_nps',2)">Submit Quiz & See Score</button>
+      <div class="score-display" id="quiz_nps_score"></div>
+    </div>
+  </div>
+
+  <!-- CES -->
+  <div class="metric-hero" data-abbr="CES" style="background:#2a1a5a;margin-top:2rem;">
+    <span class="abbr-tag" style="background:var(--gold);">CES</span>
+    <h3>Customer Effort Score</h3>
+    <p>Measures how easy it was for a customer to get their issue resolved. Low effort = high loyalty. High effort = churn risk.</p>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon gold">📐</span> How to Calculate CES</h3>
+    <p>Ask after an interaction: <em>"How easy was it to resolve your issue today?"</em> on a 1–7 scale (1 = Very Difficult, 7 = Very Easy).</p>
+
+    <div class="formula-box">
+      <div class="label">CES Formula</div>
+      <div class="formula">CES = Sum of all scores ÷ Total number of responses</div>
+      <div style="font-size:0.75rem;color:#aaa;margin-top:0.4rem;">Higher is better. Target: 5.5+ on a 7-point scale</div>
+    </div>
+
+    <div class="example-box">
+      <div class="ex-label">📊 Worked Example — TechNova Chat Support</div>
+      <p style="font-size:0.9rem;">After 10 chat interactions, TechNova received these CES scores: 6, 4, 7, 5, 6, 3, 7, 5, 6, 4</p>
+      <p style="font-family:'DM Mono',monospace;font-size:0.9rem;background:var(--cream);padding:0.8rem;border-radius:6px;margin-top:0.5rem;">Sum = 53 | Responses = 10<br>CES = 53 ÷ 10 = <strong>5.3</strong></p>
+      <p style="font-size:0.88rem;color:var(--muted);margin-top:0.5rem;">Interpretation: 5.3/7 is below the 5.5 target. The low scores (3 and 4) suggest friction in the process — likely too many transfers, long wait times, or having to explain the issue multiple times. Investigate and eliminate those specific friction points.</p>
+    </div>
+    <div class="tip"><strong>💡 Key insight:</strong> CES is a stronger predictor of churn than CSAT. Research shows 94% of customers who report "low effort" interactions intend to repurchase. High-effort experiences drive customers away even if they ultimately got their issue resolved.</div>
+  </div>
+
+  <!-- CES Quiz -->
+  <div class="quiz-section" id="quiz_ces">
+    <div class="quiz-header" style="background:#2a1a5a;">
+      <span class="quiz-icon">🧮</span>
+      <h3>Quiz — CES</h3>
+      <span class="quiz-count">2 Questions</span>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-item" data-correct="b">
+        <div class="quiz-q"><span class="qnum">Q1</span> 5 customers give CES scores of: 7, 5, 6, 4, 3. What is the CES?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',0)"><input type="radio" name="qces_1"><span class="opt-label">A</span><span>6.0</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',0)"><input type="radio" name="qces_1"><span class="opt-label">B</span><span>5.0</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',0)"><input type="radio" name="qces_1"><span class="opt-label">C</span><span>4.5</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',0)"><input type="radio" name="qces_1"><span class="opt-label">D</span><span>5.5</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_ces_0_fb_correct">✅ <strong>Correct!</strong> Sum = 7+5+6+4+3 = 25. CES = 25 ÷ 5 = 5.0. This is below the 5.5 target, indicating too much customer effort in these interactions.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_ces_0_fb_wrong">❌ <strong>Incorrect.</strong> Answer is B: 5.0. Sum (7+5+6+4+3) = 25. CES = 25 ÷ 5 = 5.0.</div>
+      </div>
+      <div class="quiz-item" data-correct="c">
+        <div class="quiz-q"><span class="qnum">Q2</span> A customer had to call 3 times and explain their problem each time before it was resolved. Which metric would BEST capture this negative experience?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',1)"><input type="radio" name="qces_2"><span class="opt-label">A</span><span>CSAT — because it measures overall satisfaction</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',1)"><input type="radio" name="qces_2"><span class="opt-label">B</span><span>NPS — because the customer won't recommend the company</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',1)"><input type="radio" name="qces_2"><span class="opt-label">C</span><span>CES — because it specifically measures how much effort the customer had to exert</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_ces',1)"><input type="radio" name="qces_2"><span class="opt-label">D</span><span>First Call Resolution rate</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_ces_1_fb_correct">✅ <strong>Correct!</strong> CES is purpose-built to measure customer effort. Multiple calls and repeated explanations = very high effort = very low CES score. This is exactly the friction CES is designed to detect and eliminate.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_ces_1_fb_wrong">❌ <strong>Incorrect.</strong> Answer is C. CES specifically captures effort. While NPS and CSAT may be affected too, CES is the metric designed precisely to measure this kind of friction.</div>
+      </div>
+      <button class="submit-quiz-btn" onclick="submitQuiz('quiz_ces',2)">Submit Quiz & See Score</button>
+      <div class="score-display" id="quiz_ces_score"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 4: FEEDBACK -->
+<hr class="divider">
+<div class="section" id="feedback">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <div>
+      <h2>Collecting & Analyzing Feedback</h2>
+      <p class="section-sub">How to gather, organize, and act on customer feedback at scale</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon">📡</span> The 5 Key Feedback Channels</h3>
+    <div class="channels-grid" style="margin-top:1rem;">
+      <div class="channel-card">
+        <div class="ch-icon">📧</div>
+        <h4>Post-interaction Survey</h4>
+        <p>Email/SMS survey sent immediately after a support interaction closes.</p>
+        <p class="use-when">Best for: CSAT, CES measurement</p>
+      </div>
+      <div class="channel-card">
+        <div class="ch-icon">🌐</div>
+        <h4>In-app / Website Widget</h4>
+        <p>Embedded feedback button or pop-up on your digital product.</p>
+        <p class="use-when">Best for: Product feedback, UX issues</p>
+      </div>
+      <div class="channel-card">
+        <div class="ch-icon">📱</div>
+        <h4>Social Media Listening</h4>
+        <p>Monitor mentions, hashtags, and comments across platforms.</p>
+        <p class="use-when">Best for: Brand sentiment, unfiltered opinions</p>
+      </div>
+      <div class="channel-card">
+        <div class="ch-icon">🗣️</div>
+        <h4>Customer Interviews</h4>
+        <p>Scheduled 20-30 min 1-on-1 calls with selected customers.</p>
+        <p class="use-when">Best for: Deep qualitative insights</p>
+      </div>
+      <div class="channel-card">
+        <div class="ch-icon">⭐</div>
+        <h4>Review Platforms</h4>
+        <p>Google, Trustpilot, G2, App Store ratings and reviews.</p>
+        <p class="use-when">Best for: Public sentiment, NPS proxy</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="icon teal">🔍</span> The 4-Step Feedback Analysis Loop</h3>
+    <ol class="steps">
+      <li>
+        <strong>Collect & Centralize</strong>
+        <span>Aggregate all feedback into one system (CRM, Airtable, spreadsheet). Don't leave feedback siloed across email, social, and support tickets.</span>
+      </li>
+      <li>
+        <strong>Categorize by theme</strong>
+        <span>Tag feedback by category: Product issue | Delivery | Pricing | Agent behavior | Process friction | Positive praise. Use consistent tags so you can spot trends.</span>
+      </li>
+      <li>
+        <strong>Quantify the impact</strong>
+        <span>How many customers mentioned each theme? What's the CSAT/NPS of customers in each category? This shows you where to prioritize improvement effort.</span>
+      </li>
+      <li>
+        <strong>Close the loop</strong>
+        <span>Share findings with relevant teams weekly. Reach back out to Detractors personally. Announce improvements to customers who flagged the issue ("You told us X, we fixed it"). This builds incredible trust.</span>
+      </li>
+    </ol>
+    <div class="tip"><strong>💡 Closing the loop example:</strong> "Hi Sarah, you mentioned our checkout was confusing in your survey last month. We've redesigned it based on your feedback — here's a sneak peek!" This turns a critic into a champion.</div>
+  </div>
+
+  <!-- QUIZ Feedback -->
+  <div class="quiz-section" id="quiz_feedback">
+    <div class="quiz-header" style="background:#4a3a1a;">
+      <span class="quiz-icon">🧠</span>
+      <h3>Quiz — Collecting & Analyzing Feedback</h3>
+      <span class="quiz-count">3 Questions</span>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-item" data-correct="b">
+        <div class="quiz-q"><span class="qnum">Q1</span> When is the BEST time to send a CSAT survey after a support interaction?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',0)"><input type="radio" name="qfb_1"><span class="opt-label">A</span><span>1 week after the interaction closes</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',0)"><input type="radio" name="qfb_1"><span class="opt-label">B</span><span>Within minutes to a few hours after the interaction closes</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',0)"><input type="radio" name="qfb_1"><span class="opt-label">C</span><span>At the end of the month in a batch survey</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',0)"><input type="radio" name="qfb_1"><span class="opt-label">D</span><span>Only when the customer has made another purchase</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_feedback_0_fb_correct">✅ <strong>Correct!</strong> Survey response rates drop sharply after 24 hours. The experience is freshest immediately after the interaction — send within minutes to a few hours for best accuracy and response rates.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_feedback_0_fb_wrong">❌ <strong>Incorrect.</strong> Answer is B. Timing is critical — the interaction needs to be fresh. Delayed surveys get lower response rates and less accurate feedback.</div>
+      </div>
+      <div class="quiz-item" data-correct="d">
+        <div class="quiz-q"><span class="qnum">Q2</span> You notice 40% of your negative feedback mentions "having to explain the problem multiple times to different agents." What should you do?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',1)"><input type="radio" name="qfb_2"><span class="opt-label">A</span><span>Ignore it — some customers will always complain</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',1)"><input type="radio" name="qfb_2"><span class="opt-label">B</span><span>Train agents to listen better</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',1)"><input type="radio" name="qfb_2"><span class="opt-label">C</span><span>Send a free gift to all complaining customers</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',1)"><input type="radio" name="qfb_2"><span class="opt-label">D</span><span>Implement a proper case handoff system so the next agent sees the full history automatically</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_feedback_1_fb_correct">✅ <strong>Correct!</strong> This is a systemic process issue, not an individual agent issue. The fix is implementing a CRM with full interaction history so every agent can see what happened before — eliminating the need for customers to repeat themselves.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_feedback_1_fb_wrong">❌ <strong>Incorrect.</strong> Answer is D. At 40%, this is a systemic pattern requiring a process fix — a proper case management/handoff system. Training alone won't solve a structural problem.</div>
+      </div>
+      <div class="quiz-item" data-correct="a">
+        <div class="quiz-q"><span class="qnum">Q3</span> What does "closing the feedback loop" mean in customer service?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',2)"><input type="radio" name="qfb_3"><span class="opt-label">A</span><span>Following up with customers who gave feedback to let them know what changed as a result of their input</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',2)"><input type="radio" name="qfb_3"><span class="opt-label">B</span><span>Closing a support ticket after 30 days regardless of resolution</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',2)"><input type="radio" name="qfb_3"><span class="opt-label">C</span><span>Sending monthly reports to senior management</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_feedback',2)"><input type="radio" name="qfb_3"><span class="opt-label">D</span><span>Archiving old feedback surveys to free up system space</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_feedback_2_fb_correct">✅ <strong>Correct!</strong> Closing the loop means going back to the customer and saying "you told us X, we acted on it." This is one of the most powerful loyalty-building actions a company can take — it proves you actually listened.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_feedback_2_fb_wrong">❌ <strong>Incorrect.</strong> Answer is A. Closing the loop means completing the cycle: customer gives feedback → company acts → company tells customer what changed. Most companies collect feedback but never close the loop.</div>
+      </div>
+      <button class="submit-quiz-btn" onclick="submitQuiz('quiz_feedback',3)">Submit Quiz & See Score</button>
+      <div class="score-display" id="quiz_feedback_score"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 5: GROWTH -->
+<hr class="divider">
+<div class="section" id="growth">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <div>
+      <h2>Professional Growth</h2>
+      <p class="section-sub">Stress management, career pathways, and your personal development plan</p>
+    </div>
+  </div>
+
+  <!-- Stress -->
+  <div class="card">
+    <h3><span class="icon">🧘</span> Stress Management for Customer Service Professionals</h3>
+    <p style="margin-bottom:1rem;">Customer service is emotionally demanding. Chronic stress leads to burnout, poor performance, and high attrition. These are practical, evidence-based techniques — not clichés.</p>
+
+    <div class="technique-grid">
+      <div class="technique-card">
+        <div class="tc-icon">🫁</div>
+        <h4>Box Breathing</h4>
+        <p>Inhale 4s → Hold 4s → Exhale 4s → Hold 4s. Use between difficult calls to reset your nervous system in under 60 seconds.</p>
+      </div>
+      <div class="technique-card">
+        <div class="tc-icon">🎭</div>
+        <h4>Emotional Decoupling</h4>
+        <p>Remind yourself: "The customer is angry at the situation, not at me as a person." Practice separating professional from personal identity.</p>
+      </div>
+      <div class="technique-card">
+        <div class="tc-icon">✍️</div>
+        <h4>End-of-Day Debrief</h4>
+        <p>Write down one difficult interaction and what you learned. This processes the emotion and builds resilience over time.</p>
+      </div>
+      <div class="technique-card">
+        <div class="tc-icon">⏱️</div>
+        <h4>Micro-Recovery Breaks</h4>
+        <p>Take a genuine 5-minute break after every difficult call. Stand up, move, reset. Don't immediately queue the next interaction.</p>
+      </div>
+      <div class="technique-card">
+        <div class="tc-icon">🤝</div>
+        <h4>Peer Venting Sessions</h4>
+        <p>Brief structured team check-ins where you can share difficult situations. Shared experience reduces isolation and builds team resilience.</p>
+      </div>
+      <div class="technique-card">
+        <div class="tc-icon">🏆</div>
+        <h4>Win Tracking</h4>
+        <p>Keep a "wins folder" of positive feedback, resolved complex cases, and thank-you messages. Review it on hard days. It works.</p>
+      </div>
+    </div>
+
+    <div class="warning"><strong>⚠️ Recognize Burnout Early:</strong> Signs include dreading calls, emotional numbness, cynicism toward customers, physical exhaustion, and feeling like no interaction matters. If you see these signs, speak to a manager or HR — not after months of suffering.</div>
+  </div>
+
+  <!-- Career -->
+  <div class="card">
+    <h3><span class="icon teal">🚀</span> Career Pathways from Customer Service</h3>
+    <p style="margin-bottom:1.2rem;">Customer service is not a dead end — it is the best business education you can get. Here is a realistic career ladder:</p>
+    <div class="career-timeline">
+      <div class="timeline-item">
+        <h4>Customer Service Representative (0–2 years)</h4>
+        <p>Front-line agent. Master HEAT, metrics, product knowledge. Focus on CSAT, handle time, and first contact resolution. Build your wins folder.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Senior Agent / Escalation Specialist (2–3 years)</h4>
+        <p>Handle complex/escalated cases. Begin mentoring junior agents. Start tracking team-level patterns and submitting improvement proposals.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Team Leader / Supervisor (3–5 years)</h4>
+        <p>Manage a team of 8–15 agents. Responsible for team CSAT, NPS contribution, coaching, scheduling. Partner with QA and training.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Customer Experience Manager (5–8 years)</h4>
+        <p>Design the end-to-end customer experience. Own CSAT/NPS/CES targets. Collaborate with product, marketing, and operations. Strategic role.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Director of Customer Experience / VP of CX (8+ years)</h4>
+        <p>Executive level. Drive customer strategy across the company. P&L responsibility for customer success. Seat at the leadership table.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Lateral Moves Available at Any Stage:</h4>
+        <p>Sales (customer knowledge → persuasion) | Product Management (you know what users struggle with) | UX Research | Training & L&D | Operations Management</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDP -->
+  <div class="card">
+    <h3><span class="icon gold">📋</span> Sample Personal Development Plan (PDP)</h3>
+    <p style="margin-bottom:1rem;">Use this template to create your own 90-day plan. Fill it in with your manager in a quarterly review.</p>
+    <table class="pdp-table">
+      <thead>
+        <tr>
+          <th>Goal</th>
+          <th>Action Steps</th>
+          <th>Timeline</th>
+          <th>Success Measure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Improve CSAT score</strong></td>
+          <td>Practice HEAT framework daily; review 2 call recordings per week with coach</td>
+          <td>30 days</td>
+          <td>CSAT from 74% → 82%</td>
+        </tr>
+        <tr>
+          <td><strong>Master product knowledge</strong></td>
+          <td>Complete 3 product training modules; shadow technical team for 2 hours</td>
+          <td>30 days</td>
+          <td>Pass internal product certification</td>
+        </tr>
+        <tr>
+          <td><strong>Reduce Average Handle Time</strong></td>
+          <td>Learn 5 keyboard shortcuts; pre-prepare 10 templated responses for common queries</td>
+          <td>45 days</td>
+          <td>AHT from 6.5 min → 5.5 min</td>
+        </tr>
+        <tr>
+          <td><strong>Build leadership readiness</strong></td>
+          <td>Volunteer to onboard 1 new agent; run 1 team meeting; read "The Coaching Habit"</td>
+          <td>90 days</td>
+          <td>Nominated for Senior Agent review by manager</td>
+        </tr>
+        <tr>
+          <td><strong>Stress management</strong></td>
+          <td>Practice box breathing after difficult calls; log weekly "wins" in personal folder</td>
+          <td>Ongoing</td>
+          <td>Self-reported wellbeing score ≥ 7/10 monthly</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip" style="margin-top:1rem;"><strong>💡 PDP Tip:</strong> Share your PDP with your manager — don't keep it private. Visibility creates accountability and shows initiative. Managers remember who actively invests in their own growth.</div>
+  </div>
+
+  <!-- Growth Quiz -->
+  <div class="quiz-section" id="quiz_growth">
+    <div class="quiz-header" style="background:#3a2a1a;">
+      <span class="quiz-icon">🧠</span>
+      <h3>Quiz — Professional Growth</h3>
+      <span class="quiz-count">3 Questions</span>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-item" data-correct="c">
+        <div class="quiz-q"><span class="qnum">Q1</span> You just handled a 40-minute call with an abusive customer. What should you do immediately after?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',0)"><input type="radio" name="qg_1"><span class="opt-label">A</span><span>Queue the next call immediately to stay productive</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',0)"><input type="radio" name="qg_1"><span class="opt-label">B</span><span>Complain to a colleague about the customer</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',0)"><input type="radio" name="qg_1"><span class="opt-label">C</span><span>Take a genuine 5-minute micro-recovery break — stand up, move, and reset before the next call</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',0)"><input type="radio" name="qg_1"><span class="opt-label">D</span><span>Document the call and submit a formal complaint immediately</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_growth_0_fb_correct">✅ <strong>Correct!</strong> Micro-recovery breaks are scientifically proven to prevent emotional residue from one call affecting the next. You owe the next customer (and yourself) a reset. Jumping straight to the next call compounds stress.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_growth_0_fb_wrong">❌ <strong>Incorrect.</strong> Answer is C. Back-to-back difficult calls without recovery leads to emotional burnout and poor performance on subsequent calls. The micro-recovery break is essential, not optional.</div>
+      </div>
+      <div class="quiz-item" data-correct="a">
+        <div class="quiz-q"><span class="qnum">Q2</span> Which lateral career move makes the MOST natural use of customer service experience?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',1)"><input type="radio" name="qg_2"><span class="opt-label">A</span><span>Product Management — you understand real user pain points and friction better than anyone</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',1)"><input type="radio" name="qg_2"><span class="opt-label">B</span><span>Finance — numbers and analytics transfer directly</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',1)"><input type="radio" name="qg_2"><span class="opt-label">C</span><span>Facilities Management — operational skills transfer</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',1)"><input type="radio" name="qg_2"><span class="opt-label">D</span><span>Legal — conflict resolution is a shared skill</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_growth_1_fb_correct">✅ <strong>Correct!</strong> Product Managers need deep user empathy and knowledge of where users struggle. CS agents have this in abundance from real interactions — it's one of the most powerful lateral transitions available.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_growth_1_fb_wrong">❌ <strong>The best answer is A.</strong> Customer service gives you a front-row seat to exactly where products fail users — that's the core raw material of great Product Managers. This is a natural and high-value transition.</div>
+      </div>
+      <div class="quiz-item" data-correct="d">
+        <div class="quiz-q"><span class="qnum">Q3</span> What is the PRIMARY purpose of a Personal Development Plan (PDP) in a CS role?</div>
+        <div class="quiz-options">
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',2)"><input type="radio" name="qg_3"><span class="opt-label">A</span><span>A document HR requires for annual compliance purposes</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',2)"><input type="radio" name="qg_3"><span class="opt-label">B</span><span>A list of courses to complete so you can ask for a raise</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',2)"><input type="radio" name="qg_3"><span class="opt-label">C</span><span>A punishment tool managers use for underperformers</span></label>
+          <label class="quiz-option" onclick="selectOption(this,'quiz_growth',2)"><input type="radio" name="qg_3"><span class="opt-label">D</span><span>A structured, time-bound roadmap of specific skills and goals that align your daily actions with your career ambitions</span></label>
+        </div>
+        <div class="quiz-feedback correct-fb" id="quiz_growth_2_fb_correct">✅ <strong>Correct!</strong> A real PDP is a living strategic document — not a checkbox exercise. It translates career ambition into daily, measurable actions with clear timelines and success criteria. It's a conversation with your future self.</div>
+        <div class="quiz-feedback wrong-fb" id="quiz_growth_2_fb_wrong">❌ <strong>Incorrect.</strong> Answer is D. A genuine PDP is a personal roadmap with specific, measurable goals, not a compliance document or punishment tool. When used correctly, it accelerates career progression significantly.</div>
+      </div>
+      <button class="submit-quiz-btn" onclick="submitQuiz('quiz_growth',3)">Submit Quiz & See Score</button>
+      <div class="score-display" id="quiz_growth_score"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#ccc;margin-bottom:0.5rem;">Customer Service Mastery Training Guide</p>
+  <p>A practical training resource for customer service professionals. All scenarios are fictional and created for educational purposes.</p>
+</footer>
+
+<script>
+  // Hamburger nav
+  function toggleNav() {
+    const nav = document.getElementById('navLinks');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
+  // Close nav on outside click
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('navLinks');
+    const btn = document.getElementById('hamburger');
+    if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+  });
+
+  // Quiz state
+  const quizState = {};
+
+  function selectOption(el, quizId, qIndex) {
+    if (quizState[quizId] && quizState[quizId].submitted) return;
+    const group = el.closest('.quiz-item').querySelectorAll('.quiz-option');
+    group.forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    if (!quizState[quizId]) quizState[quizId] = { answers: {}, submitted: false };
+    const optLabel = el.querySelector('.opt-label').textContent.trim().toLowerCase();
+    quizState[quizId].answers[qIndex] = optLabel;
+  }
+
+  function submitQuiz(quizId, total) {
+    const el = document.getElementById(quizId);
+    if (!quizState[quizId]) { alert('Please answer the questions first!'); return; }
+    const state = quizState[quizId];
+    if (state.submitted) return;
+    state.submitted = true;
+
+    const items = el.querySelectorAll('.quiz-item');
+    let correct = 0;
+
+    items.forEach((item, i) => {
+      const correctAns = item.dataset.correct.toLowerCase();
+      const chosen = state.answers[i];
+      const opts = item.querySelectorAll('.quiz-option');
+      
+      opts.forEach(o => {
+        o.classList.add('disabled');
+        const oLabel = o.querySelector('.opt-label').textContent.trim().toLowerCase();
+        if (oLabel === correctAns) o.classList.add('correct');
+        else if (oLabel === chosen && chosen !== correctAns) o.classList.add('wrong');
+      });
+
+      const isCorrect = chosen === correctAns;
+      if (isCorrect) correct++;
+
+      const fb_correct = document.getElementById(`${quizId}_${i}_fb_correct`);
+      const fb_wrong = document.getElementById(`${quizId}_${i}_fb_wrong`);
+      if (fb_correct && fb_wrong) {
+        fb_correct.classList.toggle('show', isCorrect);
+        fb_wrong.classList.toggle('show', !isCorrect);
+      }
+    });
+
+    const btn = el.querySelector('.submit-quiz-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitted ✓';
+
+    const scoreEl = document.getElementById(`${quizId}_score`);
+    if (scoreEl) {
+      const pct = Math.round((correct / total) * 100);
+      const emoji = pct === 100 ? '🏆' : pct >= 60 ? '👍' : '📚';
+      scoreEl.innerHTML = `<div class="score-val">${correct}/${total}</div><div>${emoji} ${pct}% — ${pct === 100 ? 'Perfect score!' : pct >= 60 ? 'Good work! Review any incorrect answers above.' : 'Keep studying — revisit the section above and try again.'}</div>`;
+      scoreEl.classList.add('show');
+      scoreEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+</script>
+</body>
+</html>
